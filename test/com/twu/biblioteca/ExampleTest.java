@@ -11,4 +11,12 @@ public class ExampleTest {
         Biblioteca biblioteca = new Biblioteca();
         assertEquals(biblioteca.welcomeMessage(), "Welcome to Biblioteca!");
     }
+
+    @Test
+    public void testListBooks() {
+        Biblioteca biblioteca = new Biblioteca();
+        assertEquals(biblioteca.ListBooks(), "Book one, book two, book three");
+    }
+
+
 }

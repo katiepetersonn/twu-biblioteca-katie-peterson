@@ -5,12 +5,15 @@ public class Biblioteca {
     public static void main(String[] args) {
         Biblioteca self = new Biblioteca();
         self.welcomeMessage();
-
+        System.out.println(self.welcomeMessage());
+        System.out.println(self.ListBooks());
     }
 
     public String welcomeMessage() {
-        String message = "Welcome to Biblioteca!";
-        System.out.println(message);
-        return message;
+        return "Welcome to Biblioteca!";
+    }
+
+    public String ListBooks() {
+        return "Book one, book two, book three";
     }
 }

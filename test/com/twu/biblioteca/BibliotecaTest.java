@@ -1,10 +1,19 @@
 package com.twu.biblioteca;
 
 
+import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class ExampleTest {
+public class BibliotecaTest {
+
+    private Biblioteca biblioteca;
+
+    @Before
+    public void setup() {
+
+    }
+
 
     @Test
     public void testWelcomeMessage() {
@@ -15,8 +24,7 @@ public class ExampleTest {
     @Test
     public void testListBooks() {
         Biblioteca biblioteca = new Biblioteca();
-        assertEquals(biblioteca.ListBooks(), "Book one, book two, book three");
+        assertEquals(biblioteca.ListBooks(), "Harry Potter, Lord of the Flies, Little Women, BFG");
     }
-
 
 }

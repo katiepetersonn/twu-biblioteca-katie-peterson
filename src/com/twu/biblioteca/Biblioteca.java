@@ -6,14 +6,34 @@ public class Biblioteca {
         Biblioteca self = new Biblioteca();
 
         System.out.println(self.welcomeMessage());
-        System.out.println(self.ListBooks());
+        System.out.println(self.listBooks());
+    }
+
+    private Book[] books = new Book[] {
+                new Book(
+                        "Harry Potter and the Philosopher's Stone",
+                        "J.K.Rowling",
+                        1997),
+            new Book("A Town Like Alice", "Nevil Shute", 1950),
+            new Book("The Alchemist", "Paulo Coelho", 1988),
+            new Book("The Kite Runner", "Khaled Hosseini", 2003),
+
+    };
+
+    public Book[] getBooks() {
+        return books;
     }
 
     public String welcomeMessage() {
         return "Welcome to Biblioteca!";
     }
 
-    public String ListBooks() {
-        return "Harry Potter, Lord of the Flies, Little Women, BFG";
+    public String listBooks() {
+        String result = "";
+        for (Book book: books) {
+            result += String.format("%s | %s | %s\n", book.getTitle(), book.getAuthor(), book.getYearPublished());
+        }
+        return result;
+     }
     }
-}
+

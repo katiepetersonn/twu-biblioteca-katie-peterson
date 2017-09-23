@@ -33,7 +33,7 @@ public class BibliotecaTest {
 
     @Test
     public void testWelcomeMessage() {
-        assertEquals(biblioteca.welcomeMessage(), "Welcome to Biblioteca!");
+        assertEquals(biblioteca.getWelcomeMessage(), "Welcome to Biblioteca!");
     }
 
     @Test

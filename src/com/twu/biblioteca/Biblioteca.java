@@ -5,9 +5,15 @@ public class Biblioteca {
     public static void main(String[] args) {
         Biblioteca self = new Biblioteca();
 
-        System.out.println(self.welcomeMessage());
+        self.open();
+
+//        System.out.println(self.getWelcomeMessage());
         System.out.println(self.listBooks());
     }
+
+    public String welcomeMessage = "Welcome to Biblioteca!";
+    public String menu = "L: List Books";
+
 
 
     private Book[] books = new Book[] {
@@ -22,7 +28,7 @@ public class Biblioteca {
     };
 
     public String getMenu(){
-        return "L: List Books";
+        return menu;
     }
 
     public Book[] getBooks() {
@@ -30,8 +36,8 @@ public class Biblioteca {
     }
 
 
-    public String welcomeMessage() {
-        return "Welcome to Biblioteca!";
+    public String getWelcomeMessage() {
+        return welcomeMessage;
     }
 
     public String listBooks() {
@@ -40,6 +46,10 @@ public class Biblioteca {
             result += String.format("%s | %s | %s\n", book.getTitle(), book.getAuthor(), book.getYearPublished());
         }
         return result;
+     }
+
+     public void open() {
+        System.out.println(getWelcomeMessage() +  "\n\n" + getMenu());
      }
     }
 

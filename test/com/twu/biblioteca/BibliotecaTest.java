@@ -13,6 +13,7 @@ public class BibliotecaTest {
     private Book[] books;
     private String sampleOutput;
 
+
     @Before
     public void setUp() {
         biblioteca = new Biblioteca();
@@ -23,6 +24,11 @@ public class BibliotecaTest {
                 new Book("The Kite Runner", "Khaled Hosseini", 2003),
         };
         sampleOutput = "Harry Potter and the Philosopher's Stone | J.K.Rowling | 1997";
+    }
+
+    @Test
+    public void testGetMenu() {
+        assertEquals(biblioteca.getMenu(), "L: List Books");
     }
 
     @Test

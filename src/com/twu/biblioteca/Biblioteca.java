@@ -9,6 +9,7 @@ public class Biblioteca {
         System.out.println(self.listBooks());
     }
 
+
     private Book[] books = new Book[] {
                 new Book(
                         "Harry Potter and the Philosopher's Stone",
@@ -20,9 +21,14 @@ public class Biblioteca {
 
     };
 
+    public String getMenu(){
+        return "L: List Books";
+    }
+
     public Book[] getBooks() {
         return books;
     }
+
 
     public String welcomeMessage() {
         return "Welcome to Biblioteca!";

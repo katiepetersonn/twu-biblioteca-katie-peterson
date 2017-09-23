@@ -42,5 +42,11 @@ public class BibliotecaTest {
         assertTrue(biblioteca.listBooks().contains(sampleOutput));
     }
 
+    @Test
+    public void testRunningWithQuitChoice() {
+
+    }
+
+
 
 }

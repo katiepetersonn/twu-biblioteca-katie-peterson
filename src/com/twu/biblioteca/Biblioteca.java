@@ -1,14 +1,18 @@
 package com.twu.biblioteca;
 
+import java.util.Objects;
+import java.util.Scanner;
+
 public class Biblioteca {
 
     public static void main(String[] args) {
         Biblioteca self = new Biblioteca();
 
         self.open();
+        self.run();
 
 //        System.out.println(self.getWelcomeMessage());
-        System.out.println(self.listBooks());
+//        System.out.println(self.listBooks());
     }
 
     public String welcomeMessage = "Welcome to Biblioteca!";
@@ -49,7 +53,22 @@ public class Biblioteca {
      }
 
      public void open() {
-        System.out.println(getWelcomeMessage() +  "\n\n" + getMenu());
+        System.out.println(getWelcomeMessage() +  "\n" + getMenu());
      }
+
+    public void run() {
+        Scanner scan = new Scanner(System.in);
+        String choice = scan.nextLine().trim();
+
+        while (!Objects.equals (choice, "Q")) {
+            if (Objects.equals(choice, "L")) {
+                System.out.println(listBooks());
+            } else {
+                System.out.println("Select a valid option!");
+            }
+            choice = scan.next().substring(0, 1);
+        }
     }
+
+}
 

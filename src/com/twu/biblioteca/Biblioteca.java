@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -13,8 +14,14 @@ public class Biblioteca {
 
     }
 
-    public String welcomeMessage = "Welcome to Biblioteca!";
-    public String menu = "L: List Books";
+    private String welcomeMessage = "Welcome to Biblioteca!";
+    private String[] validInputs = new String[] {"L", "C", "Q"};
+    private Command[] commands = new Command[] {
+            new ListCommand("L",
+                    "List available books"),
+            new CheckOut("C",
+                    "Check out a book")
+    };
 
 
 
@@ -29,43 +36,61 @@ public class Biblioteca {
 
     };
 
-    public String getMenu(){
-        return menu;
+//    public String getMenu(){
+//        return menu;
+//    }
+
+    public String getWelcomeMessage() {
+        return welcomeMessage;
     }
 
     public Book[] getBooks() {
         return books;
     }
 
-
-    public String getWelcomeMessage() {
-        return welcomeMessage;
+    public Command[] getCommands() {
+        return commands;
     }
 
-    public String listBooks() {
+    public String formatCommands() {
         String result = "";
-        for (Book book: books) {
-            result += String.format("%s | %s | %s\n", book.getTitle(), book.getAuthor(), book.getYearPublished());
+        for (Command command : getCommands()) {
+            result += command.toString() + "\n";
         }
         return result;
-     }
+    }
 
     public void open() {
-        System.out.println(getWelcomeMessage() +  "\n" + getMenu());
-     }
+        System.out.println(getWelcomeMessage() + "\n\n" + formatCommands());
+    }
 
     public void run() {
         Scanner scan = new Scanner(System.in);
-        String choice = scan.nextLine().trim();
-
-        while (!Objects.equals (choice, "Q")) {
-            if (Objects.equals(choice, "L")) {
-                System.out.println(listBooks());
-            } else {
-                System.out.println("Select a valid option!");
-            }
-            choice = scan.next().substring(0, 1);
+        String command = scan.next().substring(0, 1);
+        while (!Objects.equals(command, "Q")) {
+            respondToInput(command);
+            command = scan.next().substring(0, 1);
         }
+    }
+
+    private void respondToInput(String command) {
+        if (isValidCommand(command)) {
+            executeCommand(command);
+        } else {
+            System.out.println("Select a valid option!");
+        }
+    }
+
+    private void executeCommand(String command) {
+        for (Command element : getCommands()) {
+            if (Objects.equals(command, element.getSymbol())) {
+                element.run(getBooks());
+            }
+        }
+    }
+
+    private boolean isValidCommand(String command) {
+        return Arrays.asList(validInputs).contains(command);
     }
 
 }

@@ -30,7 +30,7 @@ public class BookTest {
 
     @Test
     public void testGetPublishedYear() {
-        assertEquals(book.getAuthor(), "1997");
+        assertEquals(book.getYearPublished(), 2006);
     }
 
     @Test
@@ -38,5 +38,10 @@ public class BookTest {
         assertTrue(!book.isOnLoan());
     }
 
-    
+    @Test
+    public void testCheckOut() {
+        book.checkOut();
+        assertTrue(book.isOnLoan());
+    }
+
 }

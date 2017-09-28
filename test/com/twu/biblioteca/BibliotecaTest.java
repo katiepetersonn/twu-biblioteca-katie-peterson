@@ -30,21 +30,21 @@ public class BibliotecaTest {
         sampleOutput = "Harry Potter and the Philosopher's Stone | J.K.Rowling | 1997";
     }
 
-    @Test
-    public void testGetMenu() {
-        assertEquals(biblioteca.getMenu(), "L: List Books");
-    }
+//    @Test
+//    public void testGetMenu() {
+//        assertEquals(biblioteca.getMenu(), "L: List Books");
+//    }
 
     @Test
     public void testWelcomeMessage() {
         assertEquals(biblioteca.getWelcomeMessage(), "Welcome to Biblioteca!");
     }
 
-    @Test
-    public void testListBooks()
-    {
-        assertTrue(biblioteca.listBooks().contains(sampleOutput));
-    }
+//    @Test
+//    public void testListBooks()
+//    {
+//        assertTrue(biblioteca.listBooks().contains(sampleOutput));
+//    }
 
     @Test
     public void testOpenMenu()  {

@@ -2,7 +2,7 @@ package com.twu.biblioteca;
 
 public class Book {
 
-    private final boolean isOnLoan;
+    private boolean isOnLoan;
     private String title;
     private String author;
     private int yearPublished;
@@ -29,4 +29,23 @@ public class Book {
     public boolean isOnLoan() {
         return isOnLoan;
     }
+
+    public boolean checkOut() {
+        if (!isOnLoan) {
+            setOnLoan(true);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private void setOnLoan(boolean currentlyOnLoan) {
+        isOnLoan = currentlyOnLoan;
+    }
+
+    public String toString() {
+        return String.format("%20s | %18s | %4d", getTitle(), getAuthor(), getYearPublished());
+    }
+
+
 }

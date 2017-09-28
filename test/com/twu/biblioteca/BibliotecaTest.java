@@ -43,10 +43,8 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void testRunningWithQuitChoice() {
-
+    public void testOpenMenu() {
+        biblioteca.open();
     }
-
-
 
 }

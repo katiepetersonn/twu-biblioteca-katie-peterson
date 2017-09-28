@@ -11,8 +11,6 @@ public class Biblioteca {
         self.open();
         self.run();
 
-//        System.out.println(self.getWelcomeMessage());
-//        System.out.println(self.listBooks());
     }
 
     public String welcomeMessage = "Welcome to Biblioteca!";
@@ -24,10 +22,10 @@ public class Biblioteca {
                 new Book(
                         "Harry Potter and the Philosopher's Stone",
                         "J.K.Rowling",
-                        1997),
-            new Book("A Town Like Alice", "Nevil Shute", 1950),
-            new Book("The Alchemist", "Paulo Coelho", 1988),
-            new Book("The Kite Runner", "Khaled Hosseini", 2003),
+                        1997, false),
+            new Book("A Town Like Alice", "Nevil Shute", 1950, false),
+            new Book("The Alchemist", "Paulo Coelho", 1988, false),
+            new Book("The Kite Runner", "Khaled Hosseini", 2003, false),
 
     };
 
@@ -52,7 +50,7 @@ public class Biblioteca {
         return result;
      }
 
-     public void open() {
+    public void open() {
         System.out.println(getWelcomeMessage() +  "\n" + getMenu());
      }
 

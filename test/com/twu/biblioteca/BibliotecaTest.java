@@ -3,9 +3,10 @@ package com.twu.biblioteca;
 import org.junit.Before;
 import org.junit.Test;
 
+
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+
 
 public class BibliotecaTest {
 
@@ -13,15 +14,18 @@ public class BibliotecaTest {
     private Book[] books;
     private String sampleOutput;
 
+//    @Rule
+//    public final SystemOutRule systemOutRule = new SystemOutRule().enableLog();
+
 
     @Before
     public void setUp() {
         biblioteca = new Biblioteca();
         books = new Book[] {
-                new Book("Harry Potter and the Philosopher's Stone", "J.K.Rowling", 1997),
-                new Book("A Town Like Alice", "Nevil Shute", 1950),
-                new Book("The Alchemist", "Paulo Coelho", 1988),
-                new Book("The Kite Runner", "Khaled Hosseini", 2003),
+                new Book("Harry Potter and the Philosopher's Stone", "J.K.Rowling", 1997, false),
+                new Book("A Town Like Alice", "Nevil Shute", 1950, false),
+                new Book("The Alchemist", "Paulo Coelho", 1988, false),
+                new Book("The Kite Runner", "Khaled Hosseini", 2003, false),
         };
         sampleOutput = "Harry Potter and the Philosopher's Stone | J.K.Rowling | 1997";
     }
@@ -43,8 +47,17 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void testOpenMenu() {
+    public void testOpenMenu()  {
         biblioteca.open();
+//        assertEquals("Welcome to Biblioteca!\n" + "L: List books\n", systemOutRule.getLog());
     }
+
+    @Test
+    public void testCheckOutBook() {
+
+    }
+
+
+
 
 }

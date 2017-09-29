@@ -51,6 +51,12 @@ public class BibliotecaTest {
             assertFalse(availableBookList.contains("A Town Like ALice"));
     }
 
+    @Test
+    public void testUnsuccessfulCheckOutBook()  {
+        biblioteca.checkOut("Blue");
+    }
+
+
 
 
 

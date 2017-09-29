@@ -5,6 +5,7 @@ import org.junit.Test;
 
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 
@@ -30,21 +31,12 @@ public class BibliotecaTest {
         sampleOutput = "Harry Potter and the Philosopher's Stone | J.K.Rowling | 1997";
     }
 
-//    @Test
-//    public void testGetMenu() {
-//        assertEquals(biblioteca.getMenu(), "L: List Books");
-//    }
 
     @Test
     public void testWelcomeMessage() {
         assertEquals(biblioteca.getWelcomeMessage(), "Welcome to Biblioteca!");
     }
 
-//    @Test
-//    public void testListBooks()
-//    {
-//        assertTrue(biblioteca.listBooks().contains(sampleOutput));
-//    }
 
     @Test
     public void testOpenMenu()  {
@@ -54,8 +46,13 @@ public class BibliotecaTest {
 
     @Test
     public void testCheckOutBook() {
-
+        biblioteca.checkOut("A Town Like Alice");
+        String availableBookList = biblioteca.listBooks();
+            assertFalse(availableBookList.contains("A Town Like ALice"));
     }
+
+
+
 
 
 

@@ -15,7 +15,7 @@ public class Biblioteca {
     }
 
     private String welcomeMessage = "Welcome to Biblioteca!";
-    private String[] validInputs = new String[] {"L", "C", "Q"};
+    private String[] validInputs = new String[] {"L", "C", "Q","R"};
 
 
     private Book[] books = new Book[] {
@@ -60,7 +60,12 @@ public class Biblioteca {
         System.out.println(command);
         if (Objects.equals (command, "L")) {
             listBooks();
-        } else {
+        } else if (Objects.equals (command, "R")) {
+            System.out.println("Enter your book title that you would like to return:");
+            Scanner input = new Scanner(System.in);
+            String bookTitle = input.nextLine();
+            returnBooks(bookTitle);
+        } else if (Objects.equals (command, "C")) {
             System.out.println("Enter book title:");
             Scanner input = new Scanner(System.in);
             String bookTitle = input.nextLine();
@@ -70,9 +75,7 @@ public class Biblioteca {
     }
 
     public void checkOut(String bookTitle) {
-
         for (Book book : books) {
-//            System.out.println(book);
             if (Objects.equals(book.getTitle(), bookTitle)) {
                 if (book.checkOut()){
                     System.out.println("Thank you! Enjoy the book.");
@@ -80,12 +83,11 @@ public class Biblioteca {
                 }
             }
             else {
+                System.out.println(bookTitle);
                 System.out.println("That book is not available.");
                 return;
             }
-
         }
-
     }
 
     public String listBooks() {
@@ -99,6 +101,21 @@ public class Biblioteca {
         return result;
     }
 
+    public void returnBooks(String bookTitle) {
+        for (Book book : books) {
+            if (Objects.equals(book.getTitle(), bookTitle)) {
+                if (book.checkOut()){
+                    System.out.println("Thank you for returning the book");
+                    return;
+                }
+            }
+            else {
+                System.out.println(bookTitle);
+                System.out.println("That is not a valid book to return.");
+                return;
+            }
+        }
+    }
 
 
     private boolean isValidCommand(String command) {

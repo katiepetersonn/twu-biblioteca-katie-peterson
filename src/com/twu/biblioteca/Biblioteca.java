@@ -17,7 +17,7 @@ public class Biblioteca {
     private String welcomeMessage = "Welcome to Biblioteca!";
     private String[] validInputs = new String[] {"L", "C", "Q","R"};
     private String menu =
-                "L: List available books" + "\n" + "R: Return Books" + "\n" + "C: Check out a book";
+                "L: List available books" + "\n" + "C: Check out a book" + "\n" + "R: Return a Book";
 
 
     private Book[] books = new Book[] {
@@ -80,7 +80,7 @@ public class Biblioteca {
 
     public void checkOut(String bookTitle) {
         for (Book book : books) {
-            if (Objects.equals(book.getTitle(), bookTitle)) {
+            if (!Objects.equals(book.getTitle(), bookTitle)) {
                 if (book.checkOut()){
                     System.out.println("Thank you! Enjoy the book.");
                     return;
@@ -107,14 +107,13 @@ public class Biblioteca {
 
     public void returnBooks(String bookTitle) {
         for (Book book : books) {
-            if (Objects.equals(book.getTitle(), bookTitle)) {
+            if (!Objects.equals(book.getTitle(), bookTitle)) {
                 if (book.checkOut()){
                     System.out.println("Thank you for returning the book");
                     return;
                 }
             }
             else {
-                System.out.println(bookTitle);
                 System.out.println("That is not a valid book to return.");
                 return;
             }

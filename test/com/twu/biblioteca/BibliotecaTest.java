@@ -66,11 +66,6 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void successfulReturn(){
-
-    }
-
-    @Test
     public void unsuccessfulReturn(){
 
     }

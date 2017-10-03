@@ -107,7 +107,7 @@ public class Biblioteca {
 
     public void returnBooks(String bookTitle) {
         for (Book book : books) {
-            if (!Objects.equals(book.getTitle(), bookTitle)) {
+            if (Objects.equals(book.getTitle(), bookTitle)) {
                 if (book.checkOut()){
                     System.out.println("Thank you for returning the book");
                     return;

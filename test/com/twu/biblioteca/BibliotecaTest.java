@@ -62,16 +62,13 @@ public class BibliotecaTest {
         biblioteca.returnBooks("A Town Like Alice");
         String availableBookList = biblioteca.listBooks();
         assertFalse(availableBookList.contains("A Town Like ALice"));
-//        assertEquals(biblioteca.returnBooks(), "Thank you for returning the book.");
     }
 
     @Test
     public void unsuccessfulReturn(){
-
+        biblioteca.returnBooks("Whatever");
+        System.out.println("That is not a valid book to return.");
     }
-
-
-
 
 
 }

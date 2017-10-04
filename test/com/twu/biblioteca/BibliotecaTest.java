@@ -39,9 +39,8 @@ public class BibliotecaTest {
 
 
     @Test
-    public void testOpenMenu()  {
-        biblioteca.open();
-//        assertEquals("Welcome to Biblioteca!\n" + "L: List books\n", systemOutRule.getLog());
+    public void testMenu()  {
+//        assertEquals(biblioteca.getMenu(), "L: List available books\nC: Check out a book\nR: Return a book\nM: List available movies\nQ: Quit\n\n");
     }
 
     @Test

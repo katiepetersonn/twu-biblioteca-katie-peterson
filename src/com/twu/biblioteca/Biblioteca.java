@@ -17,7 +17,7 @@ public class Biblioteca {
     private String welcomeMessage = "Welcome to Biblioteca!";
     private String[] validInputs = new String[] {"L", "C", "Q","R"};
     private String menu =
-                "L: List available books" + "\n" + "C: Check out a book" + "\n" + "R: Return a Book";
+                "L: List available books" + "\n" + "C: Check out a book" + "\n" + "R: Return a Book" + "\n" + "Q: Quit";
 
 
     private Book[] books = new Book[] {
@@ -46,7 +46,6 @@ public class Biblioteca {
 
 
     public void open() {
-
         System.out.println(getWelcomeMessage() + "\n\n" + getMenu());
     }
 

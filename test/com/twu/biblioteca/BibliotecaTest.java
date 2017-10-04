@@ -40,7 +40,7 @@ public class BibliotecaTest {
 
     @Test
     public void testMenu()  {
-//        assertEquals(biblioteca.getMenu(), "L: List available books\nC: Check out a book\nR: Return a book\nM: List available movies\nQ: Quit\n\n");
+        assertEquals(biblioteca.getMenu(), "L: List available books\nC: Check out a book\nR: Return a book\nM: List available movies\nQ: Quit");
     }
 
     @Test
